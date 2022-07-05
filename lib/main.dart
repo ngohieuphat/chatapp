@@ -5,13 +5,15 @@ import 'package:flutter/material.dart';
 // Future<void>
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: FirebaseOptions(
-  apiKey: "AIzaSyAMFydxyzylm85p_NQNPIfs1CN4SsgDUb4",
-  appId: "1:642624191140:web:1e8bc65630967d9384c431",
-  messagingSenderId: "642624191140",
-  projectId: "chatappnew-18129",
-  ));
+  await Firebase.initializeApp();
+  // options: FirebaseOptions(
+  //     apiKey: "AIzaSyDDD3L_KH5vM_rOeNOYNrQk6fIRrLZpE7Y",
+  //     authDomain: "chatappnop.firebaseapp.com",
+  //     projectId: "chatappnop",
+  //     storageBucket: "chatappnop.appspot.com",
+  //     messagingSenderId: "704381650729",
+  //     appId: "1:704381650729:web:32792bc1be4d83aa54d938"));
+
   runApp(MyApp());
 }
 
