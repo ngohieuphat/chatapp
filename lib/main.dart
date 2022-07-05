@@ -1,56 +1,35 @@
-import 'package:appchat/screens/calls.dart';
-import 'package:appchat/screens/chats.dart';
-import 'package:appchat/screens/people.dart';
-import 'package:appchat/screens/settings.dart';
+import 'dart:io';
+import 'package:appchat/screens/chatpage.dart';
+import 'package:appchat/screens/login.dart';
+import 'package:appchat/screens/message.dart';
+import 'package:appchat/screens/register.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+void main()  {
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return CupertinoApp(
-      home: HomePage(),
-      theme: CupertinoThemeData(
-          //change the primary color
-          brightness: Brightness.light,
-          primaryColor: Color(0xFF08C187)),
-    );
-  }
+  _MyAppState createState() => _MyAppState();
 }
 
-class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
-  var screens = [Chats(), Calls(), People(), Settings()];
-
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      child: CupertinoTabScaffold(
-        resizeToAvoidBottomInset: true,
-        // add tab bar
-        tabBar: CupertinoTabBar(
-          items: [
-            BottomNavigationBarItem(
-                label: "chats", icon: Icon(CupertinoIcons.chat_bubble_2_fill)),
-            BottomNavigationBarItem(
-                label: "Calls", icon: Icon(CupertinoIcons.phone)),
-            BottomNavigationBarItem(
-                label: "Preson", icon: Icon(CupertinoIcons.person_alt_circle)),
-            BottomNavigationBarItem(
-                label: "Settings", icon: Icon(CupertinoIcons.settings_solid))
-          ],
-        ),
-        tabBuilder: (BuildContext context, int index) {
-          return screens[index];
-        },
+    return MaterialApp(
+      title: 'chat',
+      theme: ThemeData(
+        primaryColor: Colors.orange[900],
       ),
+      home: Home(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
