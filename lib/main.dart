@@ -1,15 +1,17 @@
-import 'dart:io';
-import 'package:appchat/screens/chatpage.dart';
 import 'package:appchat/screens/login.dart';
-import 'package:appchat/screens/message.dart';
-import 'package:appchat/screens/register.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main()  {
+// Future<void>
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+  apiKey: "AIzaSyAMFydxyzylm85p_NQNPIfs1CN4SsgDUb4",
+  appId: "1:642624191140:web:1e8bc65630967d9384c431",
+  messagingSenderId: "642624191140",
+  projectId: "chatappnew-18129",
+  ));
   runApp(MyApp());
 }
 

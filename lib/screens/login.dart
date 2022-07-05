@@ -1,3 +1,5 @@
+import 'package:appchat/screens/chatpage.dart';
+import 'package:appchat/screens/register.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +23,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: <Widget>[
             Container(
-              color: Colors.blue[900],
+              color: Colors.green[900],
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.70,
               child: Center(
@@ -235,7 +237,7 @@ class _HomeState extends State<Home> {
                       height: 5,
                     ),
                     Text(
-                      "WEBFUN",
+                      "Ngo Hieu Phat",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 30,
